@@ -23,8 +23,8 @@ export const catamaran = Catamaran({
 
 
 export const metadata: Metadata = {
-  title: "Bimal Paan Masala",
-  description: "UI/UX Workshop",
+  title: "MeshSpire | a peer to peer learning platform",
+  description: "Fastest and most optimized way of learning",
 };
 
 export default function RootLayout({
