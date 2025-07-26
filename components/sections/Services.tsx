@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Card from "@/components/Card"
 const Content = () => {
   return (
     <section className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-12">
