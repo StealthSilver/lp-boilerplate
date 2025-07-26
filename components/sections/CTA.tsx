@@ -2,14 +2,18 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <section className="relative py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 max-w-7xl mx-auto rounded-2xl shadow-md gap-12">
-      {/* Grid Background */}
-      <div className="absolute inset-0 w-full h-full bg-grid pointer-events-none rounded-2xl" aria-hidden="true" />
+    <section className="relative py-20 px-4 mt-20 mb-24 flex flex-col items-center justify-center max-w-7xl mx-auto rounded-2xl shadow-md gap-12">
       
-      {/* Black Background Overlay with some opacity to blend grid */}
+      <div className="absolute inset-0 w-full bg-grid pointer-events-none rounded-2xl" aria-hidden="true"  style={{
+        // horizontal fade on edges using mask-image
+        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)',
+      maskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)',
+      }} />
+      
+     
       <div className="absolute inset-0 w-full h-full bg-black rounded-2xl opacity-90" aria-hidden="true" />
       
-      {/* Content */}
+      
       <div className="relative flex flex-col items-center justify-center gap-2">
         <h1 className="md:text-6xl text-4xl pt-20 font-khula font-extrabold text-white tracking-tighter items-center">
           Your All-in-one Learning
