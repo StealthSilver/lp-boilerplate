@@ -4,7 +4,7 @@ import Icon from "@/app/favicon.svg"
 
 const Navbar = () => {
   return (
-    <nav className="sticky bg-slate-950 rounded-full top-4 right-0 z-50 max-w-7xl mx-auto py-4 px-10 flex justify-between items-center">
+    <nav className="sticky bg-black rounded-full top-4 right-0 z-50 max-w-7xl mx-auto py-4 px-10 flex justify-between items-center">
       <Link href="/">
         <img
           src="/MeshSpire-Dark 1.svg"

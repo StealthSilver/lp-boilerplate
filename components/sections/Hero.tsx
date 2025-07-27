@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden">
       {/* Background beams */}
       <div className="absolute inset-0 z-[-1] flex items-center justify-center">
-  <div className="w-[700px] h-full mx-auto">
+  <div className="w-[850px] h-full mx-auto">
     <BackgroundBeamsWithCollision children={undefined} />
   </div>
 </div>
@@ -55,7 +55,7 @@ const Hero = () => {
         alt="Dashboard dark"
         width={1280}
         height={750}
-        className="w-[80%] h-full object-contain sticky top-0 right-0 border-[10px] mt-[130px] border-gray-600 rounded-2xl z-10"
+        className="w-[80%] h-full object-contain sticky top-0 right-0 border-[10px] mt-[136px] border-gray-600 rounded-2xl z-10"
       />
     </section>
   );
