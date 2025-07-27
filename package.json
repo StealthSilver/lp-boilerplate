@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.34.1",
     "framer-motion": "^12.23.9",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
