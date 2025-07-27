@@ -47,8 +47,8 @@ const Content = () => {
   ];
 
   return (
-    <section className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-12">
-      <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-6 relative">
+    <section className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-12 ">
+      <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-6 relative mb-32">
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
@@ -57,23 +57,50 @@ const Content = () => {
       </div>
 
       {/* Cards */}
-      <div className="flex flex-wrap justify-center items-start w-full max-w-7xl mb-25 mt-25">
-        {cardData.map((card, index) => (
-          <div
-            key={index}
-            className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-b border-white/[0.2] p-6 relative flex flex-col items-start transition-all duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-blue-900 rounded-2xl"
-          >
-            <Image
-              src={card.icon}
-              alt={card.title}
-              width={32}
-              height={32}
-              className="mb-3"
-            />
-            <h2 className="text-xl font-khula font-semibold text-white mb-1">{card.title}</h2>
-            <p className="text-white text-sm opacity-80 font-catamaran">{card.description}</p>
-          </div>
-        ))}
+      <div className="flex flex-col max-w-7xl">
+        {/* First Row (no top border) */}
+        <div className="flex flex-wrap justify-center items-start ">
+          {cardData.slice(0, 4).map((card, index) => (
+            <div
+              key={index}
+              className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-b border-white/[0.2] p-6 relative flex flex-col items-start transition-colors duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-black"
+            >
+              {/* White rectangle on the top of left border */}
+              <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
+              <Image
+                src={card.icon}
+                alt={card.title}
+                width={32}
+                height={32}
+                className="mb-3"
+              />
+              <h2 className="text-xl font-khula font-semibold text-white mb-1">{card.title}</h2>
+              <p className="text-white text-sm opacity-80 font-catamaran">{card.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Second Row (no bottom border) */}
+        <div className="flex flex-wrap justify-center items-start">
+          {cardData.slice(4, 8).map((card, index) => (
+            <div
+              key={index}
+              className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-t border-white/[0.2] p-6 relative flex flex-col items-start transition-colors duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-black"
+            >
+              {/* White rectangle on the top of left border */}
+              <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
+              <Image
+                src={card.icon}
+                alt={card.title}
+                width={32}
+                height={32}
+                className="mb-3"
+              />
+              <h2 className="text-xl font-khula font-semibold text-white mb-1">{card.title}</h2>
+              <p className="text-white text-sm opacity-80 font-catamaran">{card.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

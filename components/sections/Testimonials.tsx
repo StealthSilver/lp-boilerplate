@@ -47,7 +47,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-12 px-4 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20">
+    <section className="py-12 px-4 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20 mt-32">
       <div className="flex flex-col items-center justify-center gap-2">
         <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-6 relative">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
