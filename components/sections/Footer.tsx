@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Social media icons */}
+      
       <div className="flex items-center justify-center gap-[40px] text-slate-400 mt-10 text-xl">
         <a href="https://github.com" target="_blank" rel="noopener noreferrer">
           <FaGithub className="hover:text-white transition-colors duration-300" />
@@ -62,7 +62,7 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* Horizontal line */}
+     
       <div className="w-[65%] h-[0.5px] bg-slate-600 mt-8" />
 
       <p className="text-sm text-slate-400">

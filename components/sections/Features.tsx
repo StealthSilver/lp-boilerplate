@@ -56,7 +56,7 @@ const Content = () => {
         <h2 className="text-4xl font-khula font-semibold text-white">Why MeshSpire?</h2>
       </div>
 
-      {/* Cards */}
+     
       <div className="flex flex-col max-w-7xl">
        
         <div className="flex flex-wrap justify-center items-start ">

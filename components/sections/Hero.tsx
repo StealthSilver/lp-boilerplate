@@ -6,7 +6,7 @@ import { BackgroundBeamsWithCollision } from "../ui/BackgroundBeams";
 const Hero = () => {
   return (
     <section className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden">
-      {/* Background beams */}
+   
       <div className="absolute inset-0 z-[-1] flex items-center justify-center">
   <div className="w-[850px] h-full mx-auto">
     <BackgroundBeamsWithCollision children={undefined} />
@@ -22,7 +22,7 @@ const Hero = () => {
           Launching Oct 2025
         </button>
 
-        {/* Spotlight wrapper */}
+        
         <div className="relative inline-block pt-20">
           <h1 className="md:text-6xl text-4xl font-khula font-extrabold text-white tracking-tighter relative z-10">
             Fastest and most efficient

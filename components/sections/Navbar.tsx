@@ -31,7 +31,7 @@ const NavbarComponent = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Initialize theme from localStorage or system preference
+  
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
@@ -43,7 +43,7 @@ const NavbarComponent = () => {
           document.documentElement.classList.remove("dark");
         }
       } else {
-        // Use system preference if no saved theme
+       
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         setTheme(prefersDark ? "dark" : "light");
         if (prefersDark) {
@@ -89,14 +89,14 @@ const NavbarComponent = () => {
         />
 
         <div className="flex items-center gap-4">
-          {/* Theme Toggle Button */}
+         
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
             className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition cursor-pointer"
           >
             {theme === "dark" ? (
-              // Sun icon (for switching to light mode)
+              
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-yellow-400 cursor-pointer"
@@ -112,7 +112,7 @@ const NavbarComponent = () => {
                 />
               </svg>
             ) : (
-              // Moon icon (for switching to dark mode)
+              
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-gray-900 dark:text-white cursor-pointer"

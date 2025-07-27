@@ -17,7 +17,7 @@ const AnimatedFlowSVG = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Helper to render duplicated rects
+  
   const DuplicatedRect = (props: React.SVGProps<SVGRectElement>) => (
     <>
       <rect {...props} stroke="white" />
@@ -25,7 +25,7 @@ const AnimatedFlowSVG = () => {
     </>
   );
 
-  // Helper to render duplicated paths
+  
   const DuplicatedPath = (props: React.SVGProps<SVGPathElement>) => (
     <>
       <path {...props} stroke="white" />
@@ -66,7 +66,7 @@ const AnimatedFlowSVG = () => {
       <DuplicatedPath d="M217 699H259C270.046 699 279 690.046 279 679L279 372" strokeWidth={1} />
 
       <DuplicatedRect x={205.5} y={174.5} width={134} height={26} rx={9.5} strokeWidth={1} />
-      {/* This rect has fill="#1E1E1E" so keep fill */}
+     
       <>
         <rect
           x={205.5}
@@ -104,7 +104,7 @@ const AnimatedFlowSVG = () => {
       <DuplicatedRect x={172.5} y={1051.5} width={201} height={286} rx={19.5} strokeWidth={1} />
       <DuplicatedRect x={191.5} y={1073.5} width={163} height={105} rx={9.5} strokeWidth={1} />
       <DuplicatedRect x={191.5} y={1198.5} width={107} height={14} rx={3.5} strokeWidth={1} />
-      {/* These two rects have fill too */}
+      
       <>
         <rect
           x={248.5}

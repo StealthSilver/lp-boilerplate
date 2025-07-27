@@ -45,9 +45,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       {data.map((item, index) => (
   <div
     key={index}
-    className="flex flex-col pt-10 md:pt-40 gap-10 mb-20" // Increased spacing between sections
+    className="flex flex-col pt-10 md:pt-40 gap-10 mb-20" 
   >
-    {/* Title Block */}
+   
     <div className="flex items-center relative">
       <div className="h-10 absolute left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center z-10">
         <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
@@ -57,7 +57,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       </h3>
     </div>
 
-    {/* Content Block */}
+    
     <div className="relative pl-16 pr-4 w-full text-[18px] leading-[1.9]"> 
       {item.content}
     </div>
