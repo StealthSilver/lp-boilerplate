@@ -61,43 +61,53 @@ const Content = () => {
        
         <div className="flex flex-wrap justify-center items-start ">
           {cardData.slice(0, 4).map((card, index) => (
-            <div
-              key={index}
-              className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-b border-white/[0.2] p-6 relative flex flex-col items-start transition-colors duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-black"
-            >
+           <div
+           key={index}
+           className="group w-[25%] min-w-[250px] h-[180px] border-l border-r border-b border-white/[0.2] p-6 relative flex flex-col items-start overflow-hidden"
+         >
+           {/* Gradient overlay with smooth transition */}
+           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none z-0" />
          
-              <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
-              <Image
-                src={card.icon}
-                alt={card.title}
-                width={32}
-                height={32}
-                className="mb-3"
-              />
-              <h2 className="text-xl font-khula font-semibold text-white mb-1">{card.title}</h2>
-              <p className="text-white text-sm opacity-80 font-catamaran">{card.description}</p>
-            </div>
+           {/* Content (z-10 so it's above the overlay) */}
+           <Image
+             src={card.icon}
+             alt={card.title}
+             width={32}
+             height={32}
+             className="mb-3 z-10"
+           />
+           <h2 className="text-xl font-khula font-semibold text-white mb-1 z-10">
+             {card.title}
+           </h2>
+           <p className="text-white text-sm opacity-80 font-catamaran z-10">
+             {card.description}
+           </p>
+         </div>
+         
           ))}
         </div>
 
         <div className="flex flex-wrap justify-center items-start">
           {cardData.slice(4, 8).map((card, index) => (
             <div
-              key={index}
-              className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-t border-white/[0.2] p-6 relative flex flex-col items-start transition-colors duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-black"
-            >
-              
-              <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
-              <Image
-                src={card.icon}
-                alt={card.title}
-                width={32}
-                height={32}
-                className="mb-3"
-              />
-              <h2 className="text-xl font-khula font-semibold text-white mb-1">{card.title}</h2>
-              <p className="text-white text-sm opacity-80 font-catamaran">{card.description}</p>
-            </div>
+            key={index}
+            className="group w-[25%] min-w-[250px] h-[180px] border-l border-r border-t border-white/[0.2] p-6 relative flex flex-col items-start overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none z-0" />
+          
+            <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
+            
+            <Image
+              src={card.icon}
+              alt={card.title}
+              width={32}
+              height={32}
+              className="mb-3 z-10"
+            />
+            <h2 className="text-xl font-khula font-semibold text-white mb-1 z-10">{card.title}</h2>
+            <p className="text-white text-sm opacity-80 font-catamaran z-10">{card.description}</p>
+          </div>
+          
           ))}
         </div>
       </div>
