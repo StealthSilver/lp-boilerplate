@@ -22,72 +22,41 @@ const NAV_ITEMS = [
 ];
 
 const NavbarComponent = () => {
-  // For mobile nav open/close
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  // Track scroll position for background change
   const [scrolled, setScrolled] = useState(false);
-
-  // Theme state: 'dark' or 'light'
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
-  // Effect: on mount - check saved theme from localStorage or default to dark
   useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-    }
-
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark" || savedTheme === "light") {
       setTheme(savedTheme);
-      if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDark ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", prefersDark);
     }
   }, []);
 
-  // Scroll listener
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
-
-    // cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle theme handler
   const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-    } else {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    }
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
   return (
     <Navbar
       className={`top-4 z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${
-        scrolled
-          ? "bg-gray-300 dark:bg-black" // gray background on scroll
-          : "bg-transparent"
+        scrolled ? "bg-gray-300 dark:bg-black" : "bg-transparent"
       }`}
     >
-      {/* Desktop Navbar */}
       <NavBody className="!flex !items-center !justify-between">
         <Link href="/" className="flex items-center cursor-pointer">
           <img
@@ -101,49 +70,33 @@ const NavbarComponent = () => {
 
         <NavItems
           items={NAV_ITEMS}
-          className={`text-white ${
-            scrolled ? "text-gray-900 dark:text-gray-100" : "text-white"
-          }`}
+          className={`text-white ${scrolled ? "text-gray-900 dark:text-gray-100" : "text-white"}`}
         />
 
         <div className="flex items-center gap-4">
-          {/* Theme toggle button */}
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
             className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition cursor-pointer"
           >
             {theme === "dark" ? (
-              <IconSun className="text-white" size={20} />
+              <IconSun key="sun" className="text-yellow-400" size={20} />
             ) : (
-              <IconMoon className="text-gray-700" size={20} />
+              <IconMoon key="moon" className="text-gray-700" size={20} />
             )}
           </button>
 
           <NavbarButton
             as={Link}
             href="/login"
-            className={`font-catamaran font-bold px-10 py-2 rounded-full transition-colors duration-300 cursor-pointer ${
-              scrolled
-                ? "bg-green-700 hover:bg-green-900 text-white"
-                : "bg-green-600 hover:bg-green-900 text-white"
-            }`}
+            className="bg-green-600 hover:bg-green-900 text-white font-catamaran font-bold px-10 py-2 rounded-full transition-colors duration-300 cursor-pointer"
             variant="dark"
           >
             Login
           </NavbarButton>
         </div>
-
-        {/* Mobile menu button, on the right on desktop but hidden */}
-        <div className="ml-4 flex lg:hidden">
-          <MobileNavToggle
-            isOpen={mobileOpen}
-            onClick={() => setMobileOpen((v) => !v)}
-          />
-        </div>
       </NavBody>
 
-      {/* Mobile Navbar */}
       <MobileNav>
         <MobileNavHeader>
           <Link href="/" className="flex items-center cursor-pointer">
