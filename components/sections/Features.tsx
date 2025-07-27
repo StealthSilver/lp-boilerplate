@@ -58,14 +58,14 @@ const Content = () => {
 
       {/* Cards */}
       <div className="flex flex-col max-w-7xl">
-        {/* First Row (no top border) */}
+       
         <div className="flex flex-wrap justify-center items-start ">
           {cardData.slice(0, 4).map((card, index) => (
             <div
               key={index}
               className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-b border-white/[0.2] p-6 relative flex flex-col items-start transition-colors duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-black"
             >
-              {/* White rectangle on the top of left border */}
+         
               <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
               <Image
                 src={card.icon}
@@ -80,14 +80,13 @@ const Content = () => {
           ))}
         </div>
 
-        {/* Second Row (no bottom border) */}
         <div className="flex flex-wrap justify-center items-start">
           {cardData.slice(4, 8).map((card, index) => (
             <div
               key={index}
               className="w-[25%] min-w-[250px] h-[180px] border-l border-r border-t border-white/[0.2] p-6 relative flex flex-col items-start transition-colors duration-300 hover:bg-gradient-to-br hover:from-gray-800 hover:to-black"
             >
-              {/* White rectangle on the top of left border */}
+              
               <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
               <Image
                 src={card.icon}
