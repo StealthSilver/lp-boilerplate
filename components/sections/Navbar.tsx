@@ -13,7 +13,6 @@ import {
   NavbarButton,
 } from "@/components/ui/ResizableNavbar";
 
-
 const NAV_ITEMS = [
   { name: "Services", link: "#services" },
   { name: "Features", link: "#features" },
@@ -24,16 +23,48 @@ const NAV_ITEMS = [
 const NavbarComponent = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
-  
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
+  // Initialize theme from localStorage or system preference
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+      if (savedTheme) {
+        setTheme(savedTheme);
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } else {
+        // Use system preference if no saved theme
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(prefersDark ? "dark" : "light");
+        if (prefersDark) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", newTheme);
+  };
 
   return (
     <Navbar
@@ -58,12 +89,45 @@ const NavbarComponent = () => {
         />
 
         <div className="flex items-center gap-4">
+          {/* Theme Toggle Button */}
           <button
-           
+            onClick={toggleTheme}
             aria-label="Toggle Theme"
             className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition cursor-pointer"
           >
-           
+            {theme === "dark" ? (
+              // Sun icon (for switching to light mode)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-yellow-400 cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"
+                />
+              </svg>
+            ) : (
+              // Moon icon (for switching to dark mode)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-gray-900 dark:text-white cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+                />
+              </svg>
+            )}
           </button>
 
           <NavbarButton
