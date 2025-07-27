@@ -65,10 +65,10 @@ const Content = () => {
            key={index}
            className="group w-[25%] min-w-[250px] h-[180px] border-l border-r border-b border-white/[0.2] p-6 relative flex flex-col items-start overflow-hidden"
          >
-           {/* Gradient overlay with smooth transition */}
-           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none z-0" />
          
-           {/* Content (z-10 so it's above the overlay) */}
+           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none z-0" />
+           <div className="absolute left-0 top-[22px] w-[6px] h-[30px] bg-white rounded-tr-sm rounded-br-sm z-10" />
+           
            <Image
              src={card.icon}
              alt={card.title}
