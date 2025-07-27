@@ -12,7 +12,7 @@ import {
   MobileNavToggle,
   NavbarButton,
 } from "@/components/ui/ResizableNavbar";
-import { IconSun, IconMoon } from "@tabler/icons-react";
+
 
 const NAV_ITEMS = [
   { name: "Services", link: "#services" },
@@ -24,40 +24,24 @@ const NAV_ITEMS = [
 const NavbarComponent = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark" || savedTheme === "light") {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", prefersDark);
-    }
-  }, []);
-
+  
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-  };
+  
 
   return (
     <Navbar
-      className={`top-4 z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${
-        scrolled ? "bg-gray-300 dark:bg-black" : "bg-transparent"
+      className={`top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${
+        scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
       }`}
     >
-      <NavBody className="!flex !items-center !justify-between">
+      <NavBody className="!flex !items-center !justify-between ">
         <Link href="/" className="flex items-center cursor-pointer">
           <img
             src="/MeshSpire-Dark 1.svg"
@@ -67,7 +51,7 @@ const NavbarComponent = () => {
             className="object-contain"
           />
         </Link>
-
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <NavItems
           items={NAV_ITEMS}
           className={`text-white ${scrolled ? "text-gray-900 dark:text-gray-100" : "text-white"}`}
@@ -75,15 +59,11 @@ const NavbarComponent = () => {
 
         <div className="flex items-center gap-4">
           <button
-            onClick={toggleTheme}
+           
             aria-label="Toggle Theme"
             className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition cursor-pointer"
           >
-            {theme === "dark" ? (
-              <IconSun key="sun" className="text-yellow-400" size={20} />
-            ) : (
-              <IconMoon key="moon" className="text-gray-700" size={20} />
-            )}
+           
           </button>
 
           <NavbarButton
