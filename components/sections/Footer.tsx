@@ -48,16 +48,16 @@ const Footer = () => {
 
       
       <div className="flex items-center justify-center gap-[40px] text-slate-400 mt-10 text-xl">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/StealthSilver" target="_blank" rel="noopener noreferrer">
           <FaGithub className="hover:text-white transition-colors duration-300" />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://x.com/Rajat_0409" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="hover:text-white transition-colors duration-300" />
         </a>
-        <a href="mailto:someone@example.com">
+        <a href="mailto:rajat.saraswat.0409@gmail.com">
           <MdEmail className="hover:text-white transition-colors duration-300" />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/rajat-saraswat-0491a3259/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="hover:text-white transition-colors duration-300" />
         </a>
       </div>

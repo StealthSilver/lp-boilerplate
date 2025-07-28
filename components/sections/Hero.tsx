@@ -2,16 +2,17 @@
 
 import React from "react";
 import { BackgroundBeamsWithCollision } from "../ui/BackgroundBeams";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <section id="home" className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden">
-   
+
       <div className="absolute inset-0 z-[-1] flex items-center justify-center">
-  <div className="w-[850px] h-full mx-auto">
-    <BackgroundBeamsWithCollision children={undefined} />
-  </div>
-</div>
+        <div className="w-[850px] h-full mx-auto">
+          <BackgroundBeamsWithCollision children={undefined} />
+        </div>
+      </div>
 
 
       <div className="relative z-10 flex flex-col items-center justify-center pt-6">
@@ -22,7 +23,7 @@ const Hero = () => {
           Launching Oct 2025
         </button>
 
-        
+
         <div className="relative inline-block pt-20">
           <h1 className="md:text-6xl text-4xl font-khula font-extrabold text-white tracking-tighter relative z-10">
             Fastest and most efficient
@@ -41,12 +42,15 @@ const Hero = () => {
         </p>
 
         <div className="flex items-center justify-center pt-12 gap-[120px]">
-          <button className="bg-green-600 font-catamaran text-white font-bold px-14 py-2 hover:bg-green-900 transition-all duration-300 rounded-full w-[200px]">
+          <Link
+            href="/MeshSpire/signup"
+            className="bg-green-600 hover:bg-green-900 text-white font-catamaran font-bold px-20 py-2 rounded-full transition-colors duration-300 cursor-pointer inline-block"
+          >
             Login
-          </button>
-          <button className="bg-black font-catamaran text-white font-bold px-14 py-2 hover:bg-white hover:text-black transition-all duration-300 rounded-full border border-white w-[200px]">
+          </Link>
+          <Link href="#contact" className="bg-black font-catamaran text-white font-bold px-14 py-2 hover:bg-white hover:text-black transition-all duration-300 rounded-full border border-white w-[200px]">
             Contact us
-          </button>
+          </Link>
         </div>
       </div>
 

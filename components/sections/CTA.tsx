@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const CTA = () => {
   return (
@@ -36,9 +37,12 @@ const CTA = () => {
         <h1 className="md:text-6xl text-4xl pt-4 font-khula font-extrabold text-white tracking-tighter items-center">
           Companion
         </h1>
-        <button className="bg-green-600 mt-20 font-catamaran text-white font-bold px-14 py-2 hover:bg-green-900 transition-all duration-300 rounded-full w-[200px]">
-          Login
-        </button>
+        <Link
+            href="/MeshSpire/signup"
+            className="bg-green-600 hover:bg-green-900 text-white font-catamaran font-bold px-20 py-2 mt-20 rounded-full transition-colors duration-300 cursor-pointer inline-block"
+          >
+            Login
+          </Link>
       </div>
     </section>
   );

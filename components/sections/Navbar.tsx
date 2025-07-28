@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image"; // ✅ Use next/image for optimization
 
 import {
   Navbar,
@@ -32,26 +33,17 @@ const NavbarComponent = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
       if (savedTheme) {
         setTheme(savedTheme);
-        if (savedTheme === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
+        document.documentElement.classList.toggle("dark", savedTheme === "dark");
       } else {
-
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setTheme(prefersDark ? "dark" : "light");
-        if (prefersDark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
+        const defaultTheme = prefersDark ? "dark" : "light";
+        setTheme(defaultTheme);
+        document.documentElement.classList.toggle("dark", prefersDark);
       }
     }
   }, []);
@@ -59,21 +51,19 @@ const NavbarComponent = () => {
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
     localStorage.setItem("theme", newTheme);
   };
 
   return (
     <Navbar
-      className={`top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
-        }`}
+      className={`top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${
+        scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
+      }`}
     >
-      <NavBody className="!flex !items-center !justify-between ">
-        <Link href="/" className="flex items-center cursor-pointer">
+      <NavBody className="!flex !items-center !justify-between">
+       
+      <Link href="/" className="flex items-center cursor-pointer">
           <img
             src="/MeshSpire-Dark 1.svg"
             alt="MeshSpire Logo"
@@ -82,24 +72,27 @@ const NavbarComponent = () => {
             className="object-contain"
           />
         </Link>
+
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
         <NavItems
           items={NAV_ITEMS}
-          className={`text-white ${scrolled ? "text-gray-900 dark:text-gray-100" : "text-white"}`}
+          className={`text-white ${
+            scrolled ? "text-gray-900 dark:text-gray-100" : "text-white"
+          }`}
         />
 
         <div className="flex items-center gap-4">
-
+       
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
             className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition cursor-pointer"
           >
             {theme === "dark" ? (
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-yellow-400 cursor-pointer"
+                className="h-6 w-6 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -112,10 +105,9 @@ const NavbarComponent = () => {
                 />
               </svg>
             ) : (
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-900 dark:text-white cursor-pointer"
+                className="h-6 w-6 text-gray-900 dark:text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -130,9 +122,10 @@ const NavbarComponent = () => {
             )}
           </button>
 
+          
           <NavbarButton
             as={Link}
-            href="https://MeshSpire/Signup"
+            href="https://meshspire/signup"
             className="bg-green-600 hover:bg-green-900 text-white font-catamaran font-bold px-10 py-2 rounded-full transition-colors duration-300 cursor-pointer"
             variant="dark"
           >
@@ -143,13 +136,13 @@ const NavbarComponent = () => {
 
       <MobileNav>
         <MobileNavHeader>
-          <Link href="/" className="flex items-center cursor-pointer">
-            <img
-              src="/MeshSpire-Dark 1.svg"
+          <Link href="/" className="inline-block cursor-pointer">
+            <Image
+              src="/MeshSpire-Dark-1.svg"
               alt="MeshSpire Logo"
               width={120}
               height={85}
-              className="object-contain"
+              className="object-contain hover:opacity-80 transition-all"
             />
           </Link>
           <MobileNavToggle
@@ -157,6 +150,7 @@ const NavbarComponent = () => {
             onClick={() => setMobileOpen((v) => !v)}
           />
         </MobileNavHeader>
+
         <MobileNavMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)}>
           {NAV_ITEMS.map((item) => (
             <a
@@ -171,14 +165,13 @@ const NavbarComponent = () => {
 
           <NavbarButton
             as={Link}
-            href="https://MeshSpire/Signup"
+            href="https://meshspire/signup"
             className="w-full bg-green-600 font-catamaran text-white font-bold px-10 py-2 hover:bg-green-900 transition-all duration-300 rounded-full mt-2 cursor-pointer"
             variant="dark"
             onClick={() => setMobileOpen(false)}
           >
             Login
           </NavbarButton>
-
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
