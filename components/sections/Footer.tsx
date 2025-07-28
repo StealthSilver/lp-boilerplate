@@ -18,7 +18,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* ✅ Updated this block below */}
+        
         <div className="flex flex-wrap justify-center items-center font-catamaran gap-8 sm:gap-16 mt-12 text-sm sm:text-base">
           <Link
             href="#services"
@@ -45,7 +45,7 @@ const Footer = () => {
             Contact us
           </Link>
         </div>
-        {/* ✅ End of updated block */}
+        
       </div>
 
       <div className="flex items-center justify-center gap-[40px] text-slate-400 mt-10 text-xl">
@@ -63,7 +63,7 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* ✅ Updated horizontal line below */}
+    
       <div className="w-[85%] sm:w-[65%] h-[0.5px] bg-slate-600 mt-8" />
 
       <p className="text-sm text-slate-400">

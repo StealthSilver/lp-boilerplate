@@ -64,12 +64,12 @@ const Content = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-20 w-full max-w-7xl">
-        {/* Timeline Section (Desktop) */}
+        
         <div ref={timelineRef} className="hidden md:flex w-full md:w-1/2">
           <Timeline data={timelineData} />
         </div>
 
-        {/* Desktop SVG */}
+       
         <div
           className="hidden md:flex w-full md:w-1/2 justify-center items-start"
           style={{
@@ -87,7 +87,7 @@ const Content = () => {
           </div>
         </div>
 
-        {/* Mobile-only Timeline + SVG */}
+    
         <div className="flex md:hidden flex-col gap-10 w-full">
           <div className="w-full">
             <Timeline data={timelineData} />

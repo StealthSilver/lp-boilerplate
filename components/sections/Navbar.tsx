@@ -73,9 +73,9 @@ const NavbarComponent = () => {
       <NavBody className="!flex !items-center !justify-between w-full">
        
 
-        {/* Desktop Layout */}
+       
         <div className="hidden md:flex w-full items-center justify-between">
-          {/* Logo on Desktop */}
+        
           <Link href="/" className="flex items-center cursor-pointer">
             <img
               src="/MeshSpire-Dark 1.svg"
@@ -86,15 +86,15 @@ const NavbarComponent = () => {
             />
           </Link>
 
-          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-          {/* Nav Items */}
+        
           <NavItems
             items={NAV_ITEMS}
             className={`text-white ${scrolled ? "text-gray-900 dark:text-gray-100" : "text-white"}`}
           />
 
-          {/* Login Button (Visible only on md and up) */}
+          
           <NavbarButton
             as={Link}
             href="https://meshspire/signup"
@@ -107,7 +107,7 @@ const NavbarComponent = () => {
       </NavBody>
       <MobileNav>
         <MobileNavHeader className="flex items-center justify-between px-4 md:hidden">
-          {/* Logo on Left */}
+       
           <Link href="/" className="flex items-center cursor-pointer">
             <img
               src="/MeshSpire-Dark 1.svg"
@@ -118,7 +118,7 @@ const NavbarComponent = () => {
             />
           </Link>
 
-          {/* Hamburger on Right */}
+         
           <MobileNavToggle
             isOpen={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
