@@ -2,7 +2,7 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <section className="relative py-20 px-4 mt-20 mb-24 flex flex-col items-center justify-center max-w-7xl mx-auto rounded-2xl shadow-md gap-12">
+    <section id="cta" className="relative py-20 px-4 mt-20 mb-24 flex flex-col items-center justify-center max-w-7xl mx-auto rounded-2xl shadow-md gap-12">
       
      
       <div

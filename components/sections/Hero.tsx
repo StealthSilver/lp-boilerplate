@@ -5,7 +5,7 @@ import { BackgroundBeamsWithCollision } from "../ui/BackgroundBeams";
 
 const Hero = () => {
   return (
-    <section className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden">
+    <section id="home" className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden">
    
       <div className="absolute inset-0 z-[-1] flex items-center justify-center">
   <div className="w-[850px] h-full mx-auto">

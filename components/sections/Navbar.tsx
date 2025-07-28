@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+
 import {
   Navbar,
   NavBody,
@@ -31,7 +32,7 @@ const NavbarComponent = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
@@ -43,7 +44,7 @@ const NavbarComponent = () => {
           document.documentElement.classList.remove("dark");
         }
       } else {
-       
+
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         setTheme(prefersDark ? "dark" : "light");
         if (prefersDark) {
@@ -68,9 +69,8 @@ const NavbarComponent = () => {
 
   return (
     <Navbar
-      className={`top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${
-        scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
-      }`}
+      className={`top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
+        }`}
     >
       <NavBody className="!flex !items-center !justify-between ">
         <Link href="/" className="flex items-center cursor-pointer">
@@ -89,14 +89,14 @@ const NavbarComponent = () => {
         />
 
         <div className="flex items-center gap-4">
-         
+
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
             className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition cursor-pointer"
           >
             {theme === "dark" ? (
-              
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-yellow-400 cursor-pointer"
@@ -112,7 +112,7 @@ const NavbarComponent = () => {
                 />
               </svg>
             ) : (
-              
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-gray-900 dark:text-white cursor-pointer"
@@ -132,7 +132,7 @@ const NavbarComponent = () => {
 
           <NavbarButton
             as={Link}
-            href="/login"
+            href="https://MeshSpire/Signup"
             className="bg-green-600 hover:bg-green-900 text-white font-catamaran font-bold px-10 py-2 rounded-full transition-colors duration-300 cursor-pointer"
             variant="dark"
           >
@@ -171,13 +171,14 @@ const NavbarComponent = () => {
 
           <NavbarButton
             as={Link}
-            href="/login"
+            href="https://MeshSpire/Signup"
             className="w-full bg-green-600 font-catamaran text-white font-bold px-10 py-2 hover:bg-green-900 transition-all duration-300 rounded-full mt-2 cursor-pointer"
             variant="dark"
             onClick={() => setMobileOpen(false)}
           >
             Login
           </NavbarButton>
+
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
