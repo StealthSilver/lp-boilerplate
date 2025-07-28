@@ -30,6 +30,34 @@ export const BackgroundBeamsWithCollision = ({
       delay: 0.2,
     },
     {
+      initialX: 12,
+      translateX: 12,
+      duration: 4,
+      repeatDelay: 0.5,
+      delay: 0.3,
+    },
+    {
+      initialX: 131,
+      translateX: 131,
+      duration: 3,
+      repeatDelay: 0.6,
+      delay: 0.2,
+    },
+    {
+      initialX: 421,
+      translateX: 421,
+      duration: 4,
+      repeatDelay: 0.5,
+      delay: 0.3,
+    },
+    {
+      initialX: 643,
+      translateX: 643,
+      duration: 3,
+      repeatDelay: 0.6,
+      delay: 0.2,
+    },
+    {
       initialX: 100,
       translateX: 100,
       duration: 3.5,
@@ -97,6 +125,38 @@ export const BackgroundBeamsWithCollision = ({
       delay: 0.3,
       className: "h-102",
     },
+    {
+      initialX: 2000,
+      translateX: 2000,
+      duration: 2,
+      repeatDelay: 0.2,
+      delay: 0.3,
+      className: "h-101",
+    },
+    {
+      initialX: 2100,
+      translateX: 2100,
+      duration: 3,
+      repeatDelay: 0.5,
+      delay: 0.3,
+      className: "h-102",
+    },
+    {
+      initialX: 2300,
+      translateX: 2100,
+      duration: 5,
+      repeatDelay: 0.2,
+      delay: 0.3,
+      className: "h-543",
+    },
+    {
+      initialX: 2200,
+      translateX: 2200,
+      duration: 4,
+      repeatDelay: 0.5,
+      delay: 0.3,
+      className: "h-103",
+    },
   ];
   
 
@@ -104,7 +164,7 @@ export const BackgroundBeamsWithCollision = ({
     <div
       ref={parentRef}
       className={cn(
-       "h-96 md:h-[40rem] bg-black relative flex items-center justify-center overflow-hidden",
+       "h-96 md:h-[40rem] bg-black relative flex items-center w-full justify-center overflow-hidden",
        
       )}
     >
@@ -233,7 +293,7 @@ const CollisionMechanism = React.forwardRef<
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "absolute left-0 top-20 m-auto h-14  rounded-full bg-gradient-to-t from-green-500 via-indigo-500 to-transparent",
+          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-green-500 via-indigo-500 to-transparent",
           
         )}
       />
