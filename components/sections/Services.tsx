@@ -56,7 +56,7 @@ const Content = () => {
   return (
     <section
       id="services"
-      className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20"
+      className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20 overflow-x-hidden "
     >
       <div className="flex flex-col items-center justify-center gap-2 w-full">
         <div className="border border-white/[0.2] flex flex-col items-center md:items-start mx-auto p-4 max-w-xs md:max-w-none relative">

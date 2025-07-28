@@ -67,7 +67,7 @@ const NavbarComponent = () => {
 
   return (
     <Navbar
-      className={`top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
+      className={`py-4 overflow-x-hidden overflow-hidden top-4 bg-black z-50 max-w-7xl mx-auto rounded-full transition-colors duration-500 ${scrolled ? "bg-gray-300 dark:bg-transparent" : "bg-transparent"
         }`}
     >
       <NavBody className="!flex !items-center !justify-between w-full">

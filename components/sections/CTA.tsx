@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section id="cta" className="relative py-20 px-4 mt-20 mb-24 flex flex-col items-center justify-center max-w-7xl mx-auto rounded-2xl shadow-md gap-12">
+    <section id="cta" className="overflow-x-hidden overflow-hidden relative py-20 px-4 mt-20 mb-24 flex flex-col items-center justify-center max-w-7xl mx-auto rounded-2xl shadow-md gap-12">
       
      
       <div
@@ -31,10 +31,11 @@ const CTA = () => {
 
    
       <div className="relative z-10 flex flex-col items-center justify-center gap-2">
-        <h1 className="md:text-6xl text-4xl pt-20 font-khula font-extrabold text-white tracking-tighter items-center">
-          Your All-in-one Learning
-        </h1>
-        <h1 className="md:text-6xl text-4xl pt-4 font-khula font-extrabold text-white tracking-tighter items-center">
+      <h1 className="md:text-6xl text-3xl pt-20 font-khula font-extrabold text-white tracking-tighter text-center md:text-left">
+  Your All-in-one Learning
+</h1>
+
+        <h1 className="md:text-6xl text-3xl pt-4 font-khula font-extrabold text-white tracking-tighter items-center">
           Companion
         </h1>
         <Link

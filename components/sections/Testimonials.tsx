@@ -47,8 +47,10 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-12 px-4 md:mt-24 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md  
-      md:gap-10">
+    <section
+      id="testimonials"
+      className="py-12 px-4 md:mt-24 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md md:gap-10 overflow-x-hidden "
+    >
       <div className="flex flex-col items-center justify-center gap-2 mb-12">
         <div className="border border-white/[0.2] flex flex-col items-center md:items-start mx-auto p-3 md:p-6 max-w-xs md:max-w-none relative">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
@@ -60,18 +62,24 @@ export default function TestimonialsSection() {
           </h2>
         </div>
       </div>
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="left"
-        speed="fast"
-        pauseOnHover={false}
-      />
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="fast"
-        pauseOnHover={false}
-      />
+      {/* Wrapper to center InfiniteMovingCards only on mobile and limit max width */}
+      <div className="flex flex-col items-center justify-center md:max-w-none ">
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="left"
+          speed="fast"
+          pauseOnHover={false}
+          className="max-w-[400px] md:max-w-[1200px]"
+        />
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="fast"
+          pauseOnHover={false}
+          className="max-w-[400px] md:max-w-[1200px]"
+        />
+      </div>
+
     </section>
   );
 }

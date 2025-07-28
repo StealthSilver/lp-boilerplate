@@ -8,13 +8,14 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden"
+      className="relative max-w-7xl mx-auto pt-12 px-4 flex flex-col items-center justify-center overflow-hidden overflow-x-hidden "
     >
       <div className="absolute inset-0 z-[-1] flex items-center justify-center">
-      <div className="w-full h-[430px] md:h-full mx-auto">
-  <BackgroundBeamsWithCollision children={undefined} />
+  <div className="w-1/2 h-[430px] md:h-full mx-auto">
+    <BackgroundBeamsWithCollision children= {undefined} />
+  </div>
 </div>
-      </div>
+
 
       <div className="relative z-10 flex flex-col items-center justify-center pt-6">
         <button
