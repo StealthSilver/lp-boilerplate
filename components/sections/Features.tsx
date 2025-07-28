@@ -47,8 +47,8 @@ const Content = () => {
   ];
 
   return (
-    <section id="features" className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-12 ">
-      <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-6 relative mb-32">
+    <section id="features" className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md md:gap-12 md:mb-16 ">
+      <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-3 md:p-6 relative mb-32">
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
