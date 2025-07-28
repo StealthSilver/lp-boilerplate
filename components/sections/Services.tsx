@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 
 import { Icon } from "@/components/ui/Icon";
 import { Timeline } from "@/components/ui/Timeline";
-import AnimatedFlowSVG from "@/components/ui/AnimatedFlowSVG";
+import AnimatedFlowSVG from "../ui/AnimatedFlowSvg";
 
 
 const timelineData = [
