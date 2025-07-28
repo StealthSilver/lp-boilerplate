@@ -41,9 +41,16 @@ const Content = () => {
   const [timelineHeight, setTimelineHeight] = useState<number>(0);
 
   useEffect(() => {
-    if (timelineRef.current) {
-      setTimelineHeight(timelineRef.current.offsetHeight);
-    }
+    const updateHeight = () => {
+      if (timelineRef.current) {
+        setTimelineHeight(timelineRef.current.offsetHeight);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
   return (
@@ -69,17 +76,17 @@ const Content = () => {
           <Timeline data={timelineData} />
         </div>
 
-       
+     
         <div
           className="hidden md:flex w-full md:w-1/2 justify-center items-start"
           style={{
-            height: timelineHeight ? `${timelineHeight - 200}px` : "auto",
-            marginTop: "50px",
+            height: timelineHeight ? `${timelineHeight - 250}px` : "500px",
+            marginTop: "0px",
           }}
         >
           <div
             style={{
-              height: timelineHeight ? `${timelineHeight - 200}px` : "auto",
+              height: timelineHeight ? `${timelineHeight - 250}px` : "500px",
               width: "100%",
             }}
           >
@@ -87,12 +94,11 @@ const Content = () => {
           </div>
         </div>
 
-    
         <div className="flex md:hidden flex-col gap-10 w-full">
           <div className="w-full">
             <Timeline data={timelineData} />
           </div>
-         
+        
         </div>
       </div>
     </section>
