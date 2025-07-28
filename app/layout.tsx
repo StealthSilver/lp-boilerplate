@@ -23,7 +23,7 @@ export const catamaran = Catamaran({
 
 
 export const metadata: Metadata = {
-  title: "MeshSpire | a peer to peer learning platform",
+  title: "MeshSpire | A peer to peer learning platform",
   description: "Fastest and most optimized way of learning",
 };
 

@@ -48,7 +48,7 @@ const Content = () => {
   }, []);
 
   return (
-    <section id="services" className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-12">
+    <section id="services" className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20">
      
       <div className="flex flex-col items-center justify-center gap-2">
         <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-6 relative">
@@ -63,7 +63,7 @@ const Content = () => {
       </div>
 
      
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full max-w-7xl">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-20 w-full max-w-7xl">
        
         <div ref={timelineRef} className="w-full md:w-1/2">
           <Timeline data={timelineData} />
