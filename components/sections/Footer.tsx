@@ -18,7 +18,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="flex items-center font-catamaran gap-16 mt-16">
+        {/* ✅ Updated this block below */}
+        <div className="flex flex-wrap justify-center items-center font-catamaran gap-8 sm:gap-16 mt-12 text-sm sm:text-base">
           <Link
             href="#services"
             className="text-slate-400 font-medium tracking-tight hover:text-white transition-all duration-300"
@@ -44,9 +45,9 @@ const Footer = () => {
             Contact us
           </Link>
         </div>
+        {/* ✅ End of updated block */}
       </div>
 
-      
       <div className="flex items-center justify-center gap-[40px] text-slate-400 mt-10 text-xl">
         <a href="https://github.com/StealthSilver" target="_blank" rel="noopener noreferrer">
           <FaGithub className="hover:text-white transition-colors duration-300" />
@@ -62,8 +63,8 @@ const Footer = () => {
         </a>
       </div>
 
-     
-      <div className="w-[65%] h-[0.5px] bg-slate-600 mt-8" />
+      {/* ✅ Updated horizontal line below */}
+      <div className="w-[85%] sm:w-[65%] h-[0.5px] bg-slate-600 mt-8" />
 
       <p className="text-sm text-slate-400">
         &copy; {new Date().getFullYear()} MeshSpire. All rights reserved
