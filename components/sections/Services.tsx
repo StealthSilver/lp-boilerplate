@@ -6,7 +6,6 @@ import { Icon } from "@/components/ui/Icon";
 import { Timeline } from "@/components/ui/Timeline";
 import AnimatedFlowSVG from "../ui/AnimatedFlowSvg";
 
-
 const timelineData = [
   {
     title: "Signup and create account",
@@ -39,7 +38,7 @@ const timelineData = [
 
 const Content = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
-  const [timelineHeight, setTimelineHeight] = useState(0);
+  const [timelineHeight, setTimelineHeight] = useState<number>(0);
 
   useEffect(() => {
     if (timelineRef.current) {
@@ -48,9 +47,11 @@ const Content = () => {
   }, []);
 
   return (
-    <section id="services" className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20">
-     
-     <div className="flex flex-col items-center justify-center gap-2 w-full">
+    <section
+      id="services"
+      className="py-12 px-4 mt-32 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md gap-20"
+    >
+      <div className="flex flex-col items-center justify-center gap-2 w-full">
         <div className="border border-white/[0.2] flex flex-col items-center md:items-start mx-auto p-4 max-w-xs md:max-w-none relative">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
           <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
@@ -62,29 +63,36 @@ const Content = () => {
         </div>
       </div>
 
-     
       <div className="flex flex-col md:flex-row items-center justify-center gap-20 w-full max-w-7xl">
-       
-        <div ref={timelineRef} className="w-full md:w-1/2">
+        {/* Timeline Section (Desktop) */}
+        <div ref={timelineRef} className="hidden md:flex w-full md:w-1/2">
           <Timeline data={timelineData} />
         </div>
 
-      
+        {/* Desktop SVG */}
         <div
           className="hidden md:flex w-full md:w-1/2 justify-center items-start"
           style={{
-            height: timelineHeight ? `${timelineHeight - 100}px` : "auto",
+            height: timelineHeight ? `${timelineHeight - 200}px` : "auto",
             marginTop: "50px",
           }}
         >
           <div
             style={{
-              height: timelineHeight ? `${timelineHeight - 100}px` : "auto",
+              height: timelineHeight ? `${timelineHeight - 200}px` : "auto",
               width: "100%",
             }}
           >
             <AnimatedFlowSVG />
           </div>
+        </div>
+
+        {/* Mobile-only Timeline + SVG */}
+        <div className="flex md:hidden flex-col gap-10 w-full">
+          <div className="w-full">
+            <Timeline data={timelineData} />
+          </div>
+         
         </div>
       </div>
     </section>
