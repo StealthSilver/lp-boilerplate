@@ -58,7 +58,7 @@ const Hero = () => {
       </div>
 
       <img
-        src="/Dashboard-dark.png"
+        src="/Dashboard-Dark.png"
         alt="Dashboard dark"
         width={1280}
         height={750}
