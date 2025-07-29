@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
           </h2>
         </div>
       </div>
-      {/* Wrapper to center InfiniteMovingCards only on mobile and limit max width */}
+      
       <div className="flex flex-col items-center justify-center md:max-w-none ">
         <InfiniteMovingCards
           items={testimonials}

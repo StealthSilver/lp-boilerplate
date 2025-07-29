@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { DM_Sans, Khula, Catamaran } from "next/font/google";
 
-// Define fonts without exporting, as Next.js layout files restrict font export fields
+
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
