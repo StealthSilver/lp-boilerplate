@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DM_Sans, Khula, Catamaran } from "next/font/google";
-
+import siteData from "../data";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,8 +22,11 @@ const catamaran = Catamaran({
 });
 
 export const metadata: Metadata = {
-  title: "MeshSpire | A peer to peer learning platform",
-  description: "Fastest and most optimized way of learning",
+  title: siteData.name,
+  description: siteData.description,
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -36,9 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${khula.variable} ${catamaran.variable}`}
     >
-      <body className="bg-black font-sans">
-        {children}
-      </body>
+      <body className="bg-black font-sans">{children}</body>
     </html>
   );
 }
