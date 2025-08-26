@@ -55,11 +55,11 @@ const Content = () => {
       className="overflow-x-hidden  py-12 px-4 flex flex-col items-center justify-center mx-4 bg-black rounded-2xl shadow-md md:gap-12 md:mb-16 "
     >
       <div className="border border-white/[0.2] flex flex-col items-start mx-auto p-3 md:p-6 relative mb-32">
-        <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
-        <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
-        <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
-        <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
-        <h2 className="text-4xl font-khula font-semibold text-white">
+        <Icon className="absolute h-6 w-6 -top-3 -left-3 text-[#fbfffd]" />
+        <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-[#fbfffd]" />
+        <Icon className="absolute h-6 w-6 -top-3 -right-3 text-[#fbfffd]" />
+        <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-[#fbfffd]" />
+        <h2 className="text-4xl font-heading font-semibold text-[#fbfffd]">
           Why {siteData.name}?
         </h2>
       </div>
@@ -81,10 +81,10 @@ const Content = () => {
                 height={32}
                 className="mb-3 z-10"
               />
-              <h2 className="text-xl font-khula font-semibold text-white mb-1 z-10">
+              <h2 className="text-xl font-heading font-semibold text-[#fbfffd] mb-1 z-10">
                 {card.title}
               </h2>
-              <p className="text-white text-sm opacity-80 font-catamaran z-10">
+              <p className="text-[#fbfffd] text-sm opacity-80 font-sans z-10">
                 {card.description}
               </p>
             </div>
@@ -108,10 +108,10 @@ const Content = () => {
                 height={32}
                 className="mb-3 z-10"
               />
-              <h2 className="text-xl font-khula font-semibold text-white mb-1 z-10">
+              <h2 className="text-xl font-heading font-semibold text-[#fbfffd] mb-1 z-10">
                 {card.title}
               </h2>
-              <p className="text-white text-sm opacity-80 font-catamaran z-10">
+              <p className="text-[#fbfffd] text-sm opacity-80 font-sans z-10">
                 {card.description}
               </p>
             </div>

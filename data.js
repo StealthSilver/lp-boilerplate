@@ -8,12 +8,12 @@ import {
 } from "lucide-react";
 
 const siteData = {
-  name: "MeshSpire",
-  title: "MeshSpire | A peer to peer learning platform",
-  description: "Fastest and most optimized way of learning",
-  heroTitle: "Generate Images, Text and Videos with AI",
+  name: "RiffinityAI",
+  title: "RiffinityAI | An AI companion platform",
+  description: "The ultimate AI companion platform for all your needs.",
+  heroTitle: "Don't Just Use AI, Experience It.",
   heroDescription:
-    "Everything AI seamlessly integrated all the modern AI generation tools into one platform so that you can generate content with a single click.",
+    "Everything you need, all in one place. Your AI companion for writing, coding, brainstorming, and more.",
   servicesTitle: "Our Services",
 
   services: [

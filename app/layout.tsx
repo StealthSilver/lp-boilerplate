@@ -1,24 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { DM_Sans, Khula, Catamaran } from "next/font/google";
+import { Maven_Pro, Poppins } from "next/font/google";
 import siteData from "../data";
 
-const dmSans = DM_Sans({
+const mavenPro = Maven_Pro({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-dm-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-maven-pro",
 });
 
-const khula = Khula({
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-  variable: "--font-khula",
-});
-
-const catamaran = Catamaran({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-  variable: "--font-catamaran",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -35,11 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${dmSans.variable} ${khula.variable} ${catamaran.variable}`}
-    >
-      <body className="bg-black font-sans">{children}</body>
+    <html lang="en" className={`${mavenPro.variable} ${poppins.variable}`}>
+      <body className="bg-[#080906] font-sans">{children}</body>
     </html>
   );
 }

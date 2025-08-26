@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { BackgroundRippleEffect } from "../ui/Ripple";
 
 const CTA = () => {
   return (
@@ -7,6 +10,8 @@ const CTA = () => {
       id="cta"
       className="overflow-x-hidden overflow-hidden relative py-20 px-4 mt-20 mb-24 flex flex-col items-center justify-center max-w-7xl mx-auto rounded-2xl shadow-md gap-12"
     >
+      <BackgroundRippleEffect rows={10} cols={27} cellSize={72} />
+
       <div
         className="absolute inset-0 w-full bg-grid pointer-events-none rounded-2xl"
         aria-hidden="true"
@@ -34,16 +39,18 @@ const CTA = () => {
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center gap-2">
-        <h1 className="md:text-6xl text-3xl pt-20 font-khula font-extrabold text-white tracking-tighter text-center md:text-left">
+        <h1 className="md:text-6xl text-3xl pt-20 font-heading font-bold text-[#fbfffd] tracking-tighter text-center md:text-left">
           Ready to signup and join the
         </h1>
 
-        <h1 className="md:text-6xl text-3xl pt-4 font-khula font-extrabold text-white tracking-tighter items-center">
-          waitlist?
+        <h1 className="md:text-6xl text-3xl pt-4 font-heading font-bold text-[#fbfffd] tracking-tighter items-center">
+          community
         </h1>
+
         <Link
-          href="/MeshSpire/signup"
-          className="bg-green-600 hover:bg-green-900 text-white font-catamaran font-bold px-20 py-2 mt-20 rounded-full transition-colors duration-300 cursor-pointer inline-block"
+          href="https://riffinity-9lzp.vercel.app/"
+          target="_blank"
+          className="bg-[#e3186c] hover:bg-[#9c0543] text-[#fbfffd] font-sans font-bold px-20 py-2 mt-20 rounded-full transition-colors duration-300 cursor-pointer inline-block"
         >
           Login
         </Link>
