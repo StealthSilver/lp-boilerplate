@@ -1,1 +1,1 @@
-MeshSpire landing page
+landing page boilerplate
